@@ -2,4 +2,4 @@
 package api
 
 // Release is the current yimoko version.
-const Release = "v0.0.1"
+const Release = "v0.0.2"

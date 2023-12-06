@@ -1,10 +1,10 @@
 syntax = "proto3";
-package yimoka.api.err;
+package yimoka.api.fault;
 import "errors/errors.proto";
 
-option go_package = "github.com/yimoka/api/err;err";
+option go_package = "github.com/yimoka/api/fault;fault";
 option java_multiple_files = true;
-option java_package = "com.yimoka.api.err";
+option java_package = "com.yimoka.api.fault";
 
 enum ErrorReason {
   option (errors.default_code) = 500;

@@ -9,11 +9,11 @@ ifeq ($(GOHOSTOS), windows)
 	#Git_Bash= $(subst cmd\,bin\bash.exe,$(dir $(shell where git)))
 	Git_Bash=$(subst \,/,$(subst cmd\,bin\bash.exe,$(dir $(shell where git))))
 	COM_PROTO_FILES=$(shell $(Git_Bash) -c "find ./com -name *.proto")
-	ERR_PROTO_FILES=$(shell $(Git_Bash) -c "find ./err -name *.proto")
+	FAULT_PROTO_FILES=$(shell $(Git_Bash) -c "find ./fault -name *.proto")
 	ALL_PROTO_FILES=$(shell $(Git_Bash) -c "find . -path ./third_party -prune -o -name '*.proto' -print")
 else
 	COM_PROTO_FILES=$(shell find ./com -name *.proto)
-	ERR_PROTO_FILES=$(shell find ./err -name *.proto)
+	FAULT_PROTO_FILES=$(shell find ./fault -name *.proto)
 	ALL_PROTO_FILES=$(shell find . -path ./third_party -prune -o -name '*.proto' -print)
 endif
 
@@ -29,17 +29,17 @@ com:
 	       $(COM_PROTO_FILES)
 	clang-format -i $(COM_PROTO_FILES)
 
-.PHONY: err
+.PHONY: fault
 # generate api proto
-err:
+fault:
 	protoc --proto_path=./ \
 	       --proto_path=third_party \
  	       --go_out=paths=source_relative:./ \
  	       --go-http_out=paths=source_relative:./ \
  	       --go-grpc_out=paths=source_relative:./ \
 				 --validate_out=paths=source_relative,lang=go:./ \
-	       $(ERR_PROTO_FILES)
-	clang-format -i $(ERR_PROTO_FILES)
+	       $(FAULT_PROTO_FILES)
+	clang-format -i $(FAULT_PROTO_FILES)
 
 .PHONY: all
 # generate api proto
