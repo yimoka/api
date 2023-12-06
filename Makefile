@@ -32,12 +32,10 @@ com:
 .PHONY: fault
 # generate api proto
 fault:
-	protoc --proto_path=./ \
-	       --proto_path=third_party \
- 	       --go_out=paths=source_relative:./ \
- 	       --go-http_out=paths=source_relative:./ \
- 	       --go-grpc_out=paths=source_relative:./ \
-				 --validate_out=paths=source_relative,lang=go:./ \
+	protoc --proto_path=. \
+							--proto_path=./third_party \
+							--go_out=paths=source_relative:. \
+							--go-errors_out=paths=source_relative:. \
 	       $(FAULT_PROTO_FILES)
 	clang-format -i $(FAULT_PROTO_FILES)
 
