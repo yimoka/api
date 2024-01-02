@@ -1,6 +1,6 @@
 module github.com/yimoka/api
 
-go 1.21.5
+go 1.18
 
 require (
 	github.com/envoyproxy/protoc-gen-validate v1.0.2
