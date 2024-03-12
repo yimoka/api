@@ -12,20 +12,19 @@ ifeq ($(GOHOSTOS), windows)
 	FAULT_PROTO_FILES=$(shell $(Git_Bash) -c "find ./fault -name *.proto")
 	ALL_PROTO_FILES=$(shell $(Git_Bash) -c "find . -path ./third_party -prune -o -name '*.proto' -print")
 else
-	COM_PROTO_FILES=$(shell find ./com -name *.proto)
+	COM_PROTO_FILES=$(shell find ./common -name *.proto)
 	FAULT_PROTO_FILES=$(shell find ./fault -name *.proto)
 	ALL_PROTO_FILES=$(shell find . -path ./third_party -prune -o -name '*.proto' -print)
 endif
 
-.PHONY: com
+.PHONY: common
 # generate api proto
-com:
+common:
 	protoc --proto_path=./ \
 	       --proto_path=third_party \
  	       --go_out=paths=source_relative:./ \
  	       --go-http_out=paths=source_relative:./ \
  	       --go-grpc_out=paths=source_relative:./ \
-				 --validate_out=paths=source_relative,lang=go:./ \
 	       $(COM_PROTO_FILES)
 	clang-format -i $(COM_PROTO_FILES)
 

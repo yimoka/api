@@ -3,9 +3,8 @@ module github.com/yimoka/api
 go 1.18
 
 require (
-	github.com/envoyproxy/protoc-gen-validate v1.0.2
 	github.com/go-kratos/kratos/v2 v2.7.2
-	google.golang.org/protobuf v1.31.0
+	google.golang.org/protobuf v1.33.0
 )
 
 require (

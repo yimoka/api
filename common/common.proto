@@ -1,0 +1,36 @@
+syntax = "proto3";
+package yimoka.api.common;
+
+option go_package = "github.com/yimoka/api/common;common";
+option java_multiple_files = true;
+option java_package = "com.yimoka.api.common";
+
+message Num { int32 value = 1; }
+
+message BigNum { int64 value = 1; }
+
+message Bool { bool value = 1; }
+
+message Str { string value = 1; }
+
+message StrMap { map<string, string> value = 1; }
+
+message NumMap { map<string, int32> value = 1; }
+
+message BigNumMap { map<string, int64> value = 1; }
+
+message BoolMap { map<string, bool> value = 1; }
+
+message StrArray { repeated string value = 1; }
+
+message NumArray { repeated int32 value = 1; }
+
+message BigNumArray { repeated int64 value = 1; }
+
+message BoolArray { repeated bool value = 1; }
+
+// 查询排序
+message SortOrder {
+  string field = 1;
+  string order = 2;
+}
