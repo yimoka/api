@@ -5,6 +5,8 @@ option go_package = "github.com/yimoka/api/common;common";
 option java_multiple_files = true;
 option java_package = "com.yimoka.api.common";
 
+import "google/protobuf/struct.proto";
+
 message Num { int32 value = 1; }
 
 message BigNum { int64 value = 1; }
@@ -21,6 +23,8 @@ message BigNumMap { map<string, int64> value = 1; }
 
 message BoolMap { map<string, bool> value = 1; }
 
+message AnyMap { google.protobuf.Struct value = 1; }
+
 message StrArray { repeated string value = 1; }
 
 message NumArray { repeated int32 value = 1; }
@@ -28,6 +32,30 @@ message NumArray { repeated int32 value = 1; }
 message BigNumArray { repeated int64 value = 1; }
 
 message BoolArray { repeated bool value = 1; }
+
+// 选项
+message Option {
+  string value = 1;
+  string label = 2;
+  optional string desc = 3;
+  optional string url = 4;
+  optional string img = 5;
+  optional string icon = 6;
+  optional string color = 7;
+  optional string background = 8;
+  // 激活态
+  optional string activeImg = 9;
+  optional string activeIcon = 10;
+  optional string activeColor = 11;
+  optional string activeBackground = 12;
+
+  optional bool disabled = 13;
+  // 存放一些额外的数据
+  google.protobuf.Struct extra = 14;
+}
+
+// 选项数据
+message Options { repeated Option data = 1; }
 
 // 查询排序
 message SortOrder {
