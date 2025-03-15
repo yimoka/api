@@ -71,7 +71,7 @@ type NumMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m NumMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -171,7 +171,7 @@ type BigNumMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m BigNumMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -271,7 +271,7 @@ type BoolMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m BoolMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -371,7 +371,7 @@ type StrMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m StrMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -471,7 +471,7 @@ type StrMapMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m StrMapMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -571,7 +571,7 @@ type NumMapMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m NumMapMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -672,7 +672,7 @@ type BigNumMapMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m BigNumMapMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -772,7 +772,7 @@ type BoolMapMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m BoolMapMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -899,7 +899,7 @@ type AnyMapMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m AnyMapMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -998,7 +998,7 @@ type StrArrayMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m StrArrayMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -1097,7 +1097,7 @@ type NumArrayMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m NumArrayMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -1196,7 +1196,7 @@ type BigNumArrayMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m BigNumArrayMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -1295,7 +1295,7 @@ type BoolArrayMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m BoolArrayMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -1470,7 +1470,7 @@ type OptionMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m OptionMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -1602,7 +1602,7 @@ type OptionsMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m OptionsMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}
@@ -1705,7 +1705,7 @@ type SortOrderMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
 func (m SortOrderMultiError) Error() string {
-	var msgs []string
+	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
 	}

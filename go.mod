@@ -5,8 +5,8 @@ go 1.21
 toolchain go1.22.4
 
 require (
-	github.com/go-kratos/kratos/v2 v2.8.2
-	google.golang.org/protobuf v1.35.1
+	github.com/go-kratos/kratos/v2 v2.8.4
+	google.golang.org/protobuf v1.36.5
 )
 
 require (
